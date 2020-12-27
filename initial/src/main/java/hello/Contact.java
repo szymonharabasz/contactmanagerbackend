@@ -1,8 +1,10 @@
 package hello;
 
 import java.util.UUID;
+import org.springframework.data.annotation.Id;
 
 public class Contact {
+    @Id
     private String id;
     private String name;
     private String phone;
@@ -62,5 +64,17 @@ public class Contact {
     }
     public void setNotes(String s) {
         notes = s;
+    }
+    @Override
+    public String toString() {
+        return "{\n" +
+            "\tname: " + name + ",\n" +
+            "\tphone: " + phone + ",\n" +
+            "\taddress: " + address + ",\n" +
+            "\temail: " + email + ",\n" +
+            "\twebsite: " + website + ",\n" +
+            "\tnotes: " + notes + ",\n" +
+            "}";
+            
     }
 }
